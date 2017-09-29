@@ -22,6 +22,11 @@ a {
   color: #000;
 }
 
+img {
+  border: 0;
+  padding: 0;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -217,22 +222,107 @@ main h1 {
   margin-bottom: 50px;
 }
 
-.card h2 {
-  padding: 15px;
+.card-post h2 {
   font-family: Source Sans Pro, sans-serif;
   font-size: 32px;
   font-weight: 400;
 }
 
-.card p {
-  padding: 15px;
+.card-post p {
   font-family: Source Sans Pro,sans-serif;
   font-size: 16px;
   color: #525252;
 }
 
-.card h2 {
+.card-post h2 a{
   color: #f22929;
+}
+
+.card-post .post__img {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.card-post .post__img img {
+  display: block;
+  width: 100%;
+}
+
+.card-post .post-text {
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.card-post .label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ababab;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.card-post .label a {
+  font-weight: normal;
+  color: #f22929;
+}
+
+.card-post .post__footer {
+  padding: 15px 40px;
+  border-top: 1px solid #e8e8e8;
+  overflow: auto;
+}
+
+.post__footer .post__similar {
+  float: left;
+  width: 75%;
+}
+
+.post__similar .similar__label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.post__similar img {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+.post__footer .post__tags {
+  float: right;
+  width: 25%;
+}
+
+.post__tags .tags__block{
+  width: 50px;
+  height: 25px;
+  background-color: #f22929;
+  color: #fff;
+  text-align: center;
+  margin-right: 4px;
+  border-radius: 3px;
+}
+
+.tags__block span {
+  line-height: 25px;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 12px;
+}
+
+.post__tags ul{
+  list-style: none;
+  position: relative;
+  top: 25px;
+}
+
+.post__tags ul li{
+  display: inline-block;
+  float: left;
+  vertical-align: middle;
+  line-height: 0;
 }
 
 .left-column {
