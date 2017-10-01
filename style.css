@@ -216,8 +216,28 @@ main h1 {
   border-radius: 2px;
   box-shadow: 0 1px 5px #dcdcdc;
   color: #2a2a2a;
-  position: relative;
   height: auto;
+}
+
+.section-label {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: #d62626;
+}
+
+.box-popular {
+  margin-top: 25px;
+  margin-bottom: 25px !important;
+}
+
+.box-popular h2 {
+  font-size: 16px !important;
+}
+
+/* POSTS */
+
+.card-post {
   margin-right: 20px;
   margin-bottom: 50px;
 }
@@ -267,7 +287,7 @@ main h1 {
   color: #f22929;
 }
 
-.card-post .post__footer {
+.post__footer {
   padding: 15px 40px;
   border-top: 1px solid #e8e8e8;
   overflow: auto;
@@ -289,6 +309,7 @@ main h1 {
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
+  border-radius: 50%;
 }
 
 .post__footer .post__tags {
@@ -323,7 +344,10 @@ main h1 {
   float: left;
   vertical-align: middle;
   line-height: 0;
+  padding-bottom: 5px;
 }
+
+/* GRID TWO COLUMNS */
 
 .left-column {
   width: 66%;
@@ -342,4 +366,57 @@ main h1 {
   .left-column {
     width: 100%;
   }
+}
+
+/* SINGLE POST */
+
+.post {
+  margin-right: 20px;
+  margin-bottom: 70px;
+}
+
+.post h1 {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  color: #000;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.post p {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 18px;
+  color: #525252;
+  margin-bottom: 20px;
+}
+
+.post .post__img {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.post .post__img img {
+  display: block;
+  width: 100%;
+}
+
+.post .post-text {
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.post .label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ababab;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.post .label a {
+  font-weight: normal;
+  color: #f22929;
 }
