@@ -19,7 +19,7 @@ svg:not(:root) {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: #000;
+  color: #f22929;
 }
 
 img {
@@ -174,11 +174,11 @@ main {
   height: calc(100vh - 70px);
   width: 100%;
   background-color: #F5F5F5;
-  padding-top: 60px;
+  padding-top: 20px;
   overflow: auto;
 }
 
-main h1 {
+main .main-header {
   text-align: center;
   color: rgba(0, 0, 0, 0.07);
   font-family: Lato, sans-serif;
@@ -419,4 +419,63 @@ main h1 {
 .post .label a {
   font-weight: normal;
   color: #f22929;
+}
+
+/* FEEDS */
+
+.feeds-header {
+  font-size: 40px;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 25px;
+  font-weight: 200;
+  display: inline-block;
+}
+
+.feed {
+  margin-bottom: 40px;
+  font-family: 'Source Code Pro', sans-serif;
+}
+
+.feed__header {
+  color: #f22929;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.feed__logo {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.feed-item {
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.feed-item__title {
+  font-size: 16px;
+}
+
+.feed-item__title a {
+  color: #000;
+  display: inline-block;
+  padding-right: 15px;
+  text-decoration: underline;
+}
+
+.feed-item__title a:hover {
+  text-decoration: none;
+}
+
+.title-domain a{
+  font-size: 11px;
+  color: #a1a1a1;
+  text-decoration: none;
+}
+
+.title-domain a:hover{
+  text-decoration: underline;
 }
