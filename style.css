@@ -95,6 +95,10 @@ img {
   color: #f22929;
 }
 
+.nav__container ul li a:active {
+  color: #f22929;
+}
+
 .nav__header {
   height: 100%;
   width: 20%;
@@ -275,10 +279,10 @@ main .main-header {
 
 .card-post .label {
   display: block;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
   color: #ababab;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   letter-spacing: 2px;
 }
 
@@ -295,7 +299,7 @@ main .main-header {
 
 .post__footer .post__similar {
   float: left;
-  width: 75%;
+  width: 65%;
 }
 
 .post__similar .similar__label {
@@ -314,7 +318,7 @@ main .main-header {
 
 .post__footer .post__tags {
   float: right;
-  width: 25%;
+  width: 35%;
 }
 
 .post__tags .tags__block{
@@ -335,8 +339,7 @@ main .main-header {
 
 .post__tags ul{
   list-style: none;
-  position: relative;
-  top: 25px;
+  margin-top: 25px;
 }
 
 .post__tags ul li{
@@ -409,10 +412,10 @@ main .main-header {
 
 .post .label {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   color: #ababab;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   letter-spacing: 2px;
 }
 
@@ -478,4 +481,44 @@ main .main-header {
 
 .title-domain a:hover{
   text-decoration: underline;
+}
+
+/* GRID */
+.row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
+  float: left;
+}
+.col-1 {
+  width: 12.5%;
+}
+
+.col-2 {
+  width: 25%;
+}
+
+.col-3 {
+  width: 37.5%;
+}
+
+.col-4 {
+  width: 50%;
+}
+
+.col-5 {
+  width: 62.5%;
+}
+
+.col-6 {
+  width: 75%;
+}
+
+.col-7 {
+  width: 87.5%;
+}
+
+.col-8 {
+  width: 100%;
 }
