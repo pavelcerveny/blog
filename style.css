@@ -27,6 +27,10 @@ img {
   padding: 0;
 }
 
+.red {
+  color: #f22929;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -432,10 +436,9 @@ main .main-header {
 /* FEEDS */
 
 .feeds-header {
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Lato', sans-serif;
   margin-bottom: 25px;
-  font-weight: 200;
   display: inline-block;
 }
 
@@ -531,15 +534,45 @@ main .main-header {
   width: 100%;
 }
 
+/* ABOUT */
+
+h1.about-header {
+  display: block;
+  border-bottom: 8px solid #333;
+}
+
+h2.about-header {
+  font-size: 36px;
+}
+
+
+ul.about-info {
+  margin-top:50px;
+  margin-left: 25px;
+  margin-bottom: 50px;
+  list-style: none;
+}
+
+ul.about-info > li {
+  text-indent: -5px;
+}
+ul.about-info > li:before {
+  content: "-  ";
+  text-indent: -5px;
+}
+
+ul.about-info li {
+  font-family: Lato, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 /* FOOTER */
 
 footer {
-  width: 100%;
-  height: 100px;
-  background-color: #d62626;
-  position: relative;
-  bottom: 0;
-  overflow: hidden;
 }
 
+pre code.hljs {
+  background-color: #fff;
+}
 
