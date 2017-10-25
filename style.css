@@ -10,7 +10,9 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  overflow-x: hidden !important;
 }
+
 
 svg:not(:root) {
   overflow: hidden;
@@ -176,15 +178,36 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  .nav__header {
+    width: auto;
+  }
+
+  .nav__container {
+    width: auto;
+    float: right;
+  }
+
+  .nav__container ul li a {
+    font-size: 13px;
+  }
+
+  .nav__container ul li {
+    padding-right: 0;
+  }
+
+}
+
 /* MAIN */
 
 main {
-  height: 567px;
-  height: calc(100vh - 70px);
+  min-height: 567px;
+  min-height: calc(100vh - 70px);
   width: 100%;
   background-color: #F5F5F5;
   padding-top: 20px;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 main .main-header {
@@ -499,7 +522,7 @@ main .main-header {
   overflow: auto;
   height: auto;
 }
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-fluid-2, .col-fluid-3 {
   float: left;
 }
 .col-1 {
@@ -510,8 +533,22 @@ main .main-header {
   width: 25%;
 }
 
+@media (max-width: 768px) {
+  .col-2 {
+    width: 50%;
+  }
+}
+
 .col-3 {
   width: 37.5%;
+}
+
+.col-fluid-2 {
+  min-width: 25%;
+}
+
+.col-fluid-3 {
+  min-width: 37.5%;
 }
 
 .col-4 {
@@ -538,7 +575,7 @@ main .main-header {
 
 h1.about-header {
   display: block;
-  border-bottom: 8px solid #333;
+  /*border-bottom: 8px solid #333;*/
 }
 
 h2.about-header {
@@ -570,9 +607,28 @@ ul.about-info li {
 /* FOOTER */
 
 footer {
+  background-color: #f22929;
+  height: 50px;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+footer h4 {
+  color: #fff;
+  font-size: 11px;
+  font-family: "Source Code Pro", sans-serif;
+  opacity: 0.3;
+  font-weight: lighter;
 }
 
 pre code.hljs {
   background-color: #fff;
 }
 
+.code-header {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: beige;
+}

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pavel Červený - blog | About me</title>
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -84,9 +85,9 @@
           <h2 class="feeds-header about-header">Stuff I deeply admire <sup>(and I am able to create)</sup></h2>
         </div>
 
-        <div class="col-2">
+        <div class="col-fluid-2">
           <div class="card card-post box-popular">
-            <h3>Python</h3>
+            <h3 class="code-header">Python</h3>
            <pre>
              <code class="python">
 if not not values:
@@ -96,9 +97,9 @@ if not not values:
           </div>
         </div>
 
-        <div class="col-2">
+        <div class="col-fluid-2">
           <div class="card card-post box-popular">
-            <h3>C</h3>
+            <h3 class="code-header">C</h3>
          <pre>
            <code class="c">
 if (result == true)
@@ -109,10 +110,23 @@ else
          </pre>
           </div>
       </div>
+        <div class="col-fluid-2">
+          <div class="card card-post box-popular">
+            <h3 class="code-header">PHP</h3>
+            <pre>
+           <code class="php">
+$int = (int) $int;
+if (is_int($int)) {
+   // ...
+}
+           </code>
+         </pre>
+          </div>
+        </div>
 
-      <div class="col-3">
+      <div class="col-fluid-3">
         <div class="card card-post box-popular">
-          <h3>Java</h3>
+          <h3 class="code-header">Java</h3>
           <pre>
            <code class="java">
 public Calendar getTomorrow() {
@@ -124,9 +138,9 @@ public Calendar getTomorrow() {
         </div>
       </div>
 
-      <div class="col-3">
+      <div class="col-fluid-3">
         <div class="card card-post box-popular">
-          <h3>HTML</h3>
+          <h3 class="code-header">HTML</h3>
           <pre>
            <code class="html">
 &lt;P&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
@@ -141,20 +155,6 @@ public Calendar getTomorrow() {
         </div>
       </div>
 
-        <div class="col-2">
-          <div class="card card-post box-popular">
-            <h3>PHP</h3>
-            <pre>
-           <code class="php">
-$int = (int) $int;
-if (is_int($int)) {
-   // ...
-}
-           </code>
-         </pre>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -162,7 +162,7 @@ if (is_int($int)) {
 </main>
 
 <footer>
-
+  <h4>Created by Pavel Červený - 2017</h4>
 </footer>
 
 </body>
