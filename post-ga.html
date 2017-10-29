@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavel Červený - blog</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <div class="nav__header">
+      <a href="/" class="nav__logo">
+        <svg viewBox="0 0 72 135" width="15" height="40" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <path d="M24.17 63.79C-5.38 42.89 -5.38 21.63 24.17 0" id="exS9caME"></path>
+            <path d="M24.17 31.9C53.72 52.8 53.72 74.06 24.17 95.68" id="a3zmJhEzZr"></path>
+            <path d="M24.17 140C-5.38 119.1 -5.38 97.84 24.17 76.22" id="apicEORL"></path>
+            <path d="M24.17 108.11C53.72 129.01 53.72 150.27 24.17 171.9" id="b2YAcYP99d"></path>
+          </defs><g><g><g><g>
+          <use class="svg__path__part1" xlink:href="#exS9caME" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="4" stroke-opacity="1"></use></g></g><g><g>
+          <use class="svg__path__part2" xlink:href="#a3zmJhEzZr" opacity="1" fill-opacity="0" stroke="#e31d1d" stroke-width="4" stroke-opacity="1"></use></g></g><g><g>
+          <use class="svg__path__part3" xlink:href="#apicEORL" opacity="1" fill-opacity="0" stroke="#e31d1d" stroke-width="4" stroke-opacity="1"></use></g></g><g><g>
+          <use class="svg__path__part4" xlink:href="#b2YAcYP99d" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="4" stroke-opacity="1"></use></g></g></g></g></svg>
+        <p class="logo__text"><span class="logo__text__part1">Pavel</span> <span class="logo__text__part2">Červený</span></p>
+      </a>
+    </div>
+    <nav class="nav__container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="feed.html">Feed</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="main-container">
+    <div class="card post">
+      <div class="post__img">
+        <a href="/">
+          <img src="analytics.png" alt="React meets Redux" />
+        </a>
+      </div>
+      <div class="post-text">
+        <span class="label">
+            <a href="/">news</a> / october 29, 2017
+        </span>
+        <h1>Web analytics - GA snippet code</h1>
+        <p><em>Note: we are going to talk in this article just about the bootstrap snippet.&nbsp;</em></p>
+        <p>I guess it's save to assume, that everyone, who works with web pages for example as a developer or administrator, already heard or used Google Analytics.&nbsp;</p>
+        <p>What it does, is that measures how users interact with your website. For example, how long stay users on particular page, what links they are clicking, what page or search engine did they come from and many, many more.</p>
+        <p>We are not going to discuss the whole process functionality, but only this little snippet. And only from the perspective of Javascript language.</p>
+        <p><em>(this minified example script is copied from <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/">Google Analytics website</a>)</em></p>
+        <pre>
+            <code class="javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
+            </code>
+        </pre>
+        <p><em>(when we use some Javascript beautifier eg.: <a href="http://jsbeautifier.org/">JS Beautifier</a>, then we get this:)</em></p>
+        <pre>
+            <code class="javascript">
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
+            </code>
+        </pre>
+        <p>This is a little better, but we cannot know the names of parameter variables(that's the purpose of minifier anyways), but we don't need it after all. How we can see, the script is divided into two parts:</p>
+        <ol>
+          <li><strong>initialization</strong></li>
+          <li><strong>creating events - calling ga() function</strong></li>
+        </ol>
+        <p>&nbsp;</p>
+        <p>First thing we should notice is this:</p>
+        <pre>
+            <code class="javascript">
+(function(i, s, o, g, r, a, m) {/* content */})
+(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            </code>
+        </pre>
+        <p>It's called <strong>IIFE</strong> or&nbsp;<strong>Immediately Invoked Function Expression</strong>. It's a function, which is executed immediately when is defined, for example in this case, it's executed when the page is loading. So no need to call this called afterwards.</p>
+        <p><strong>(i, s, o, g, r, a, m)</strong> matches the parameters given at the end:&nbsp;<strong>(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')</strong>.&nbsp;</p>
+        <p><strong>i = window, s = document, o = 'script', g =&nbsp;'https://www.google-analytics.com/analytics.js', r = 'ga', a = undefined (not used), m = undefined (not used)</strong></p>
+        <p><strong>i['GoogleAnalyticsObject'] = r (='ga')</strong>; - on <strong>window object</strong> = global space, we are creating a new property called&nbsp;<strong>GoogleAnalyticsObject</strong> and giving it a value of <strong>'ga'</strong>. We can imagine, that this is an another alias for function <strong>ga</strong>, which will be defined later.</p>
+        <p><em>This part is probably the most important, if we ever wanted to create our own analytics library and it's a core of it's own functionality.</em></p>
+        <pre>
+            <code class="javascript">
+i[r] = i[r] || function() {
+(i[r].q = i[r].q || []).push(arguments)
+}, i[r].l = 1 * new Date();
+            </code>
+        </pre>
+        <p>It means, that we are creating property <strong>ga </strong>on <em>window object</em> (again, it's a global space in browser). Then, when the ga property already exists, we use it's value, otherwise we are creating a new function. This function has interesting insides, because when it's called, then it's going to do only one thing, it pushes arguments (using built-in Javascript object arguments = function parameters) into it's own container or an inner array.&nbsp;i[r].q is again, either the created value, or an empty array. <strong>i[r].l</strong> is current timestamp.</p>
+        <p>So later on, when we call&nbsp;<strong>ga('send', 'pageview');</strong>, it's calling property <em>window['ga']</em> and the paramters:&nbsp;<em>('send', 'pageview')</em> are stored inside the&nbsp;<em>window['ga']['q']</em>.</p>
+        <pre>
+            <code class="javascript">
+a = s.createElement(o),
+m = s.getElementsByTagName(o)[0];
+a.async = 1;
+a.src = g;
+m.parentNode.insertBefore(a, m)
+            </code>
+        </pre>
+        <p>Finally this code creates a <strong>HTML script tag (o = 'script')</strong>. It's going to find other<em> HTML script tags - m</em>. Set script download to <em>async</em> = it can be downloaded after the page is loaded. And set it's source to&nbsp;'https://www.google-analytics.com/analytics.js'(<em>=g</em>) and then it's going to insert this tag before the first one(found =<em>&nbsp;m</em>).</p>
+        <p>The sole purpose of this script is not to executed some actions, but only to download the main script and create a container for the commands, which are supposed to be executed later in a loop in the downloaded main script.</p>
+      </div>
+      <div class="post__footer">
+        <div class="post__similar">
+          <div class="similar__label">
+            Similar posts:
+          </div>
+          <img src="small-redux.png" />
+          <img src="http://via.placeholder.com/50x50" />
+        </div>
+        <div class="post__tags">
+          <ul>
+            <li>
+              <div class="tags__block"><a href="categories.html#javascript">Javascript</a></div>
+            </li>
+            <li>
+              <div class="tags__block"><a href="categories.html#analytics">Analytics</a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <h4>Created by Pavel Červený - 2017</h4>
+</footer>
+</body>
+</html>

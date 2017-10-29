@@ -24,6 +24,10 @@ a {
   color: #f22929;
 }
 
+a:active {
+  color: #f22929;
+}
+
 img {
   border: 0;
   padding: 0;
@@ -295,14 +299,16 @@ main .main-header {
 }
 
 .card-post .post__img {
-  max-height: 300px;
+  max-height: 400px;
   overflow: hidden;
 }
 
-.card-post .post__img img {
+.card-post .post__img a > img {
   display: block;
   width: 100%;
+  max-height: 400px;
 }
+
 
 .card-post .post-text {
   padding: 40px;
@@ -345,7 +351,7 @@ main .main-header {
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .post__footer .post__tags {
@@ -354,7 +360,7 @@ main .main-header {
 }
 
 .post__tags .tags__block{
-  width: 50px;
+  width: 60px;
   height: 25px;
   background-color: #f22929;
   color: #fff;
@@ -363,10 +369,12 @@ main .main-header {
   border-radius: 3px;
 }
 
-.tags__block span {
+.tags__block a {
   line-height: 25px;
   font-family: Source Sans Pro, sans-serif;
   font-size: 12px;
+  color: #fff;
+
 }
 
 .post__tags ul{
@@ -410,6 +418,12 @@ main .main-header {
   margin-bottom: 70px;
 }
 
+@media (max-width: 992px) {
+  .post {
+    margin-right: 0;
+  }
+}
+
 .post h1 {
   font-family: Source Sans Pro, sans-serif;
   font-size: 60px;
@@ -427,6 +441,13 @@ main .main-header {
   margin-bottom: 20px;
 }
 
+.post ol {
+  font-family: Source Sans Pro,sans-serif;
+  font-size: 18px;
+  color: #525252;
+  padding-left: 28px;
+}
+
 .post .post__img {
   max-height: 400px;
   overflow: hidden;
@@ -435,6 +456,7 @@ main .main-header {
 .post .post__img img {
   display: block;
   width: 100%;
+  max-height: 400px;
 }
 
 .post .post-text {
