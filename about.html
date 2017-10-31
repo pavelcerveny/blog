@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pavel Červený - blog | About me</title>
   <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="stylesheet" type="text/css" href="print.css" media="print">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
@@ -17,7 +18,7 @@
 <header class="site-nav">
   <div class="container">
     <div class="nav__header">
-      <a href="/" class="nav__logo">
+      <a href="index.html" class="nav__logo">
         <svg viewBox="0 0 72 135" width="15" height="40" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
           <defs>
@@ -64,7 +65,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="categories.html">Categories</a></li>
         <li><a href="feed.html">Feed</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
       </ul>
     </nav>
   </div>
@@ -110,7 +111,7 @@ else
          </pre>
           </div>
       </div>
-        <div class="col-fluid-2">
+        <div class="col-fluid-2 always-page-break-after">
           <div class="card card-post box-popular">
             <h3 class="code-header">PHP</h3>
             <pre>
