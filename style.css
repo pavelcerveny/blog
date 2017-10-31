@@ -234,6 +234,7 @@ main .main-header {
   margin-right: auto;
   margin-left: auto;
   height: 100%;
+  overflow: auto;
 }
 @media (min-width: 768px) {
   .main-container {
@@ -656,4 +657,13 @@ pre code.hljs {
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: beige;
+}
+
+.main-container-about {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
 }
