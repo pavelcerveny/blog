@@ -3,11 +3,11 @@ import { newPostState } from '../types/types';
 import { API } from "../api";
 
 export const state: newPostState = {
-    content: 'Insert some blog post!',
+    content: '',
     title: '',
     titleImg: '',
-    author: 'admin',
-    status: 'new',
+    author: '',
+    status: '',
     error: null,
 };
 
@@ -21,18 +21,12 @@ export const getters: GetterTree<newPostState, any> = {
 };
 
 export const mutations: MutationTree<newPostState> = {
-    updateContent: (state, value) => {
-        state.content = value;
-    },
-    updateTitle: (state, value) => {
-        state.title = value;
-    },
     setError: (state, value) => {
         state.error = value;
     },
-    savePost: (state) => {
-        state.content = '';
-        state.title = '';
+    getPost: (state, value) => {
+        state.content = value.content;
+        state.title = value.title;
         state.titleImg = '';
         state.error = null;
     },
@@ -40,20 +34,14 @@ export const mutations: MutationTree<newPostState> = {
 
 export const actions: ActionTree<newPostState, any> = {
 
-    updateContent: ({ commit }, payload) => {
-        commit('updateContent', payload);
-    },
-    updateTitle: ({ commit }, payload) => {
-        commit('updateTitle', payload);
-    },
-    async savePost ({ commit }, payload) {
+    async getPost ({ commit }, payload) {
         try {
-            const response = await API.addPost(payload);
+            const response = await API.getPost(payload);
 
             if (!response.title) {
                 commit('setError', response.toString());
             } else {
-                commit('savePost');
+                commit('getPost', response);
             }
 
         } catch (e) {
@@ -63,7 +51,7 @@ export const actions: ActionTree<newPostState, any> = {
     },
 };
 
-export const newPost: Module<newPostState, any> = {
+export const blogPost: Module<newPostState, any> = {
     state,
     getters,
     mutations,

@@ -1,3 +1,4 @@
+<div>
 <header class="site-nav">
     <div class="container">
         <div class="nav__header">
@@ -49,15 +50,29 @@
                 <li><a href="categories.html">Categories</a></li>
                 <li><a href="feed.html">Feed</a></li>
                 <li><a href="about.html">About</a></li>
-                <li style="float:right" @click.prevent="login"><a href="">Login</a></li>
+                <li v-if="!userEmail" style="float:right" @click.prevent="showLoginComp"><a href="">Login</a></li>
+                <li v-else style="float:right"><span class="nav__email">{{userEmail}}</span><a href="" @click.prevent="logout">Logout</a></li>
             </ul>
         </nav>
-        <div v-bind:style="loginCompStyle" v-bind:class="loginComponent">
-            <label>Email:</label>
-            <input name="email" v-model="email" />
-            <label name="password">Password</label>
-            <input name="password" v-model="password">
-            <button></button>
-        </div>
     </div>
 </header>
+
+<transition name="fade">
+    <div v-if="showLogin && !userEmail" class="login">
+        <div v-if="errorMsg" class="alert alert-danger" role="alert">
+            Incorrect credentials!
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="emailModel">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" v-model="passwordModel">
+            </div>
+            <button type="submit" class="btn btn-dark" @click.prevent="login">Submit</button>
+        </form>
+    </div>
+</transition>
+</div>

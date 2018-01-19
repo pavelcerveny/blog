@@ -1,13 +1,13 @@
-// Store
+
 export interface newPostState {
-    text: String;
+    content: String;
     title: String;
     titleImg: String;
     author: String;
     status: String;
+    error: any;
 }
 
-// Model
 export interface uploadedImgsState {
     id: Number,
     data: String,
@@ -21,4 +21,14 @@ export interface authState {
     userID: Number,
     email: String,
     token: String,
+    error: any
+}
+
+export interface blogPostState {
+    content: String;
+    title: String;
+    titleImg: String;
+    author: String;
+    status: String;
+    error: any;
 }

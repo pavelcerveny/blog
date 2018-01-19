@@ -23,6 +23,8 @@ Route::group(['middleware' => ['jwt']], function () {
     Route::get('logout', 'UserController@logout');
     // Route::post('refresh', 'UserController@refresh');
     Route::get('me', 'UserController@me');
+
+    Route::post('addPost', 'PostController@addPost');
   });
 
 });
@@ -33,4 +35,3 @@ Route::get('images', 'ImageController@images');
 
 Route::get('posts/{limit?}', 'PostController@posts')->where('limit', '[0-9]+');
 Route::get('posts/{url}', 'PostController@getPost');
-Route::post('addPost', 'PostController@addPost');

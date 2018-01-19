@@ -35,6 +35,8 @@ class ImageController extends Controller
         $newImage = new \App\Image($data);
         $newImage->user()->associate(User::find(1));
         $newImage->save();
+
+        return response()->json(["success" => true], 200);
       }
     }
 

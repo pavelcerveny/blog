@@ -1,23 +1,31 @@
 <div>
-    <h1>Add new posts</h1>
-    <div class="container">
-        <div class="row">
-            <div class="image-box">
-                <li v-for="image in images">
-                    <img :src="image.data" />
-                    <span>{{ image.title }}</span>
-                </li>
+    <div class="alert alert-danger" role="alert">
+        Title is missing!
+    </div>
+    <h1>Add new post</h1>
+    <div class="form-group">
+        <div class="container">
+            <div class="row">
+                <div class="image-box">
+                    <li v-for="image in images">
+                        <img :src="image.data" />
+                        <span>{{ image.title }}</span>
+                    </li>
+                </div>
             </div>
         </div>
+        <input type="file" @change="onFileChange" value="Upload image">
     </div>
-
-    <input type="file" @change="onFileChange" value="Upload image">
-    <br /><br />
-    <input v-model="postTitle">
-    <tiny-m-c-e id="descriptionLong"
-                v-model="descriptionModel"
-                :content="descriptionModel"
-                :toolbar="'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'">
-    </tiny-m-c-e>
-    <button @click="savePost">Save post</button>
+    <div class="form-group">
+        <h4 for="title">Add title</h4>
+        <input type="email" class="form-control" id="title" placeholder="title..." v-model="postTitle">
+        <br /><br />
+        <tiny-m-c-e id="descriptionLong"
+                    v-model="descriptionModel"
+                    :content="descriptionModel"
+                    :toolbar="'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'">
+        </tiny-m-c-e>
+        <br /><br />
+        <button @click="savePost" class="btn btn-success">Save post</button>
+    </div>
 </div>

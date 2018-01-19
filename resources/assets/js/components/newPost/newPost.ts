@@ -16,11 +16,11 @@ export class NewPostComponent extends Vue {
     images: Array<object> = [];
 
     get descriptionModel () {
-        return this.$store.getters['newPost/text'];
+        return this.$store.getters['newPost/content'];
     }
 
     set descriptionModel (value) {
-        this.$store.dispatch('newPost/updateText', value);
+        this.$store.dispatch('newPost/updateContent', value);
     }
 
     get postTitle () {
@@ -32,7 +32,11 @@ export class NewPostComponent extends Vue {
     }
 
     savePost() {
-        this.$store.dispatch('newPost/savePost');
+        let data = {
+            title: this.postTitle,
+            content: this.descriptionModel
+        };
+        this.$store.dispatch('newPost/savePost', data);
     }
 
     onFileChange(e: any): void {

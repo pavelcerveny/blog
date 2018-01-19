@@ -66,5 +66,29 @@ export class API {
                 return err;
             });
     }
+
+    static addPost(data): any {
+        const endpoint = `${API.endpoint}/user/addPost`;
+
+        return axios.post(endpoint, data)
+            .then(function (res) {
+                return res.data;
+            })
+            .catch(function (err) {
+                return err;
+            });
+    }
+
+    static getPost(url): any {
+        const endpoint = `${API.endpoint}/posts/${url}`;
+
+        return axios.get(endpoint)
+            .then(function (res) {
+                return res.data;
+            })
+            .catch(function (err) {
+                return err;
+            });
+    }
 }
 

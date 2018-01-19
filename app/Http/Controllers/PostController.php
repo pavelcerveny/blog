@@ -19,7 +19,7 @@ class PostController extends Controller
       $newPost = new Post([
         "title" => $request->input('title'),
         "url" => $slug->slugify($request->input('title')),
-        "preview" => $request->input('preview'),
+        "preview" => '',
         "content" => $request->input('content')
       ]);
       $newPost->user()->associate(User::find(1));

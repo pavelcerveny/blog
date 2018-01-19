@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { Component } from 'vue-property-decorator';
+import { Component, Prop } from 'vue-property-decorator';
 
 @Component({
     name: 'HeaderComponent',
@@ -9,12 +9,49 @@ import { Component } from 'vue-property-decorator';
 })
 export class HeaderComponent extends Vue {
 
-    loginComponent: string = 'none';
+    showLogin: boolean = false;
+    showLogout: boolean = false;
 
-    loginCompStyle: string = 'width:100px;height:100px;border: 1px solid #636b6f';
+    email: string;
+
+    password: string;
+
+    get emailModel () {
+        return this.email;
+    }
+
+    set emailModel (value) {
+        this.email = value;
+    }
+
+    get passwordModel () {
+        return this.password;
+    }
+
+    set passwordModel (value) {
+        this.password = value;
+    }
+
+    get errorMsg () {
+        return this.$store.getters['auth/error'];
+    }
+
+    get userEmail () {
+        return this.$store.getters['auth/email'];
+    }
+
+    showLoginComp() {
+        this.showLogin = !this.showLogin;
+    }
 
     login() {
+        this.$store.dispatch('auth/logIn', { email: this.email, password: this.password });
 
-        this.loginComponent = this.loginComponent == 'none' ? 'block' : 'none';
+        this.emailModel = '';
+        this.passwordModel = '';
+    }
+
+    logout() {
+        this.$store.dispatch('auth/logOut');
     }
 }

@@ -150,7 +150,11 @@ img {
   font-weight: 700;
 }
 
-.nav__logo {
+p.logo__text {
+  margin-bottom: 0;
+}
+
+a.nav__logo {
   text-decoration: none;
 }
 

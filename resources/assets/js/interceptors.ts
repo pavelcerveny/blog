@@ -14,9 +14,12 @@ export default function interceptorSetup() {
 
         return response
     },  (error) => {
+        console.log(`RESPONSE\n`);
+        console.log(error);
+        console.log('\n');
         switch (error.response.status) {
             case 401:
-                store.dispatch('auth/logOut');
+                // store.dispatch('auth/logOut');
                 break;
             default:
                 console.log(error.response)

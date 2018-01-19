@@ -25,8 +25,8 @@ import interceptorSetup from './interceptors';
 
 interceptorSetup();
 
-store.dispatch('auth/logIn', { email:'boehm.lawrence@example.com', password: 'secret' });
-setTimeout(function(){ store.dispatch('auth/logOut'); }, 3000);
+// store.dispatch('auth/logIn', { email:'sabrina.mcdermott@example.net', password: 'secret' });
+// setTimeout(function(){ store.dispatch('auth/logOut'); }, 3000);
 
 
 // Vue init
