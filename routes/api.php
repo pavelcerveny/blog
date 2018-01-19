@@ -20,12 +20,17 @@ Route::group(['middleware' => ['jwt']], function () {
   // Route::resource('/user', 'UserController');
   Route::prefix('user')->group(function () {
 
-    Route::post('logout', 'UserController@logout');
-    Route::post('refresh', 'UserController@refresh');
-    Route::post('me', 'UserController@me');
+    Route::get('logout', 'UserController@logout');
+    // Route::post('refresh', 'UserController@refresh');
+    Route::get('me', 'UserController@me');
   });
 
 });
 
-Route::get('posts', 'PostController@posts');
+Route::post('upload/image', 'ImageController@uploadImage');
+Route::get('image/{filename}', 'ImageController@getImage');
+Route::get('images', 'ImageController@images');
 
+Route::get('posts/{limit?}', 'PostController@posts')->where('limit', '[0-9]+');
+Route::get('posts/{url}', 'PostController@getPost');
+Route::post('addPost', 'PostController@addPost');

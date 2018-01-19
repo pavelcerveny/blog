@@ -21,6 +21,13 @@ import '../sass/app.scss';
 // Setup
 Vue.config.productionTip = false;
 
+import interceptorSetup from './interceptors';
+
+interceptorSetup();
+
+store.dispatch('auth/logIn', { email:'boehm.lawrence@example.com', password: 'secret' });
+setTimeout(function(){ store.dispatch('auth/logOut'); }, 3000);
+
 
 // Vue init
 new Vue({

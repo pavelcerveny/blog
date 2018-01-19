@@ -41,6 +41,14 @@ img {
   color: #f22929;
 }
 
+.none {
+  display: none;
+}
+
+.block {
+    display: block;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;

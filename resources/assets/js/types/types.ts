@@ -16,3 +16,9 @@ export interface uploadedImgsState {
     path: String,
     time: Date
 }
+
+export interface authState {
+    userID: Number,
+    email: String,
+    token: String,
+}

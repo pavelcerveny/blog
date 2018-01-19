@@ -47,7 +47,7 @@ class UserController extends Controller
       return response()->json(['error' => 'could_not_create_token'], 500); // something went wrong whilst attempting to encode the token
     }
 
-    return response()->json(['token' => "Bearer $token"]);
+    return response()->json(['token' => "Bearer $token", 'user' => $this->guard()->user()]);
   }
 
   /**
@@ -69,7 +69,7 @@ class UserController extends Controller
   {
     $this->guard()->logout();
 
-    return response()->json(['message' => 'Successfully logged out']);
+    return response()->json(['message' => 'success']);
   }
 
   /**

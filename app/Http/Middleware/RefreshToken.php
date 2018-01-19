@@ -28,7 +28,6 @@ class RefreshToken extends BaseMiddleware {
       }
 
       $payload = $this->auth->manager()->getPayloadFactory()->buildClaimsCollection()->toPlainArray();
-      dump($payload);
       return $next($request); // Token is valid. User logged. Response without any token.
     } catch (TokenExpiredException $t) { // Token expired. User not logged.
       $payload = $this->auth->manager()->getPayloadFactory()->buildClaimsCollection()->toPlainArray();

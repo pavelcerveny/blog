@@ -49,7 +49,15 @@
                 <li><a href="categories.html">Categories</a></li>
                 <li><a href="feed.html">Feed</a></li>
                 <li><a href="about.html">About</a></li>
+                <li style="float:right" @click.prevent="login"><a href="">Login</a></li>
             </ul>
         </nav>
+        <div v-bind:style="loginCompStyle" v-bind:class="loginComponent">
+            <label>Email:</label>
+            <input name="email" v-model="email" />
+            <label name="password">Password</label>
+            <input name="password" v-model="password">
+            <button></button>
+        </div>
     </div>
 </header>
