@@ -1,8 +1,84 @@
-<div>
-    <h1>The Home Page</h1>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab asperiores, aut autem, blanditiis consequuntur
-        dolore excepturi laborum maiores minima nihil non nulla obcaecati quas quibusdam quod sed suscipit vero
-        voluptatem.</p>
-
+<div class="mainpage">
+    <div class="left-column">
+       <div v-for="post in posts" class="card card-post"> <!--always-page-break-after-->
+            <div class="post__img">
+                <router-link :to="createUrl(post.url)">
+                    <img :src="post.titleImg" :alt="post.title" />
+                </router-link>
+            </div>
+            <div class="post-text">
+          <span class="label">
+              <a href="/">news</a> / october 29, 2017
+          </span>
+                <h2>
+                    <router-link :to="createUrl(post.url)">
+                        {{ post.title }}
+                    </router-link>
+                </h2>
+                <p v-html="createPreview(post.content)"></p>
+                <p>...</p>
+            </div>
+            <div class="post__footer">
+                <!--<div class="post__similar">-->
+                <!--<div class="similar__label">-->
+                <!--Similar posts:-->
+                <!--</div>-->
+                <!--<img src="http://via.placeholder.com/50x50"/>-->
+                <!--<img src="http://via.placeholder.com/50x50"/>-->
+                <!--</div>-->
+                <div class="post__tags">
+                    <ul>
+                        <li>
+                            <div class="tags__block"><a href="categories.html#javascript">Javascript</a></div>
+                        </li>
+                        <li>
+                            <div class="tags__block"><a href="categories.html#redux">Redux</a></div>
+                        </li>
+                        <li>
+                            <div class="tags__block"><a href="categories.html#react">React</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-column">
+        <h3 class="section-label">Popular</h3>
+        <div v-for="post in posts" class="card card-post box-popular">
+            <div class="post__img">
+                <router-link :to="createUrl(post.url)">
+                    <img :src="post.titleImg" :alt="post.title" />
+                </router-link>
+            </div>
+            <div class="post-text">
+          <span class="label">
+              <a href="/">news</a> / october 29, 2017
+          </span>
+                <h2>
+                    <router-link :to="createUrl(post.url)">
+                        {{ post.title }}
+                    </router-link>
+                </h2>
+            </div>
+        </div>
+        <!--<h3 class="section-label">Tags</h3>-->
+        <!--<div class="card card-post">-->
+            <!--<div class="post__tags">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<div class="tags__block"><a href="categories.html#javascript">Javascript</a></div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="tags__block"><a href="categories.html#redux">Redux</a></div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="tags__block"><a href="categories.html#analytics">Analytics</a></div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="tags__block"><a href="categories.html#react">React</a></div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
 </div>

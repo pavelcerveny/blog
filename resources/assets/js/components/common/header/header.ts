@@ -53,5 +53,6 @@ export class HeaderComponent extends Vue {
 
     logout() {
         this.$store.dispatch('auth/logOut');
+        this.showLogin = false;
     }
 }

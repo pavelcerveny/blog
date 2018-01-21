@@ -2,7 +2,7 @@
 <header class="site-nav">
     <div class="container">
         <div class="nav__header">
-            <a href="index.html" class="nav__logo">
+             <router-link to="/" class="nav__logo">
                 <svg viewBox="0 0 72 135" width="15" height="40" class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
                     <defs>
@@ -42,21 +42,25 @@
                 </svg>
                 <p class="logo__text"><span class="logo__text__part1">Pavel</span> <span
                         class="logo__text__part2">Červený</span></p>
-            </a>
+            </router-link>
         </div>
         <nav class="nav__container">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="feed.html">Feed</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><router-link to="/" class="active">Home</router-link></li>
+                <li><router-link to="/categories">Categories</router-link></li>
+                <li><router-link to="/feed">Feed</router-link></li>
+                <li><router-link to="/about">About</router-link></li>
+
                 <li v-if="!userEmail" style="float:right" @click.prevent="showLoginComp"><a href="">Login</a></li>
-                <li v-else style="float:right"><span class="nav__email">{{userEmail}}</span><a href="" @click.prevent="logout">Logout</a></li>
+                <li v-else style="float:right">
+                    <span class="nav__email">{{userEmail}}</span>
+                    <router-link to="/addPost">Add Post</router-link>
+                    <a href="" @click.prevent="logout">Logout</a>
+                </li>
             </ul>
         </nav>
     </div>
 </header>
-
 <transition name="fade">
     <div v-if="showLogin && !userEmail" class="login">
         <div v-if="errorMsg" class="alert alert-danger" role="alert">

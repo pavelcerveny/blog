@@ -90,5 +90,16 @@ export class API {
                 return err;
             });
     }
+    static getPosts(limit = 5): any {
+        const endpoint = `${API.endpoint}/posts/${limit}`;
+
+        return axios.get(endpoint)
+            .then(function (res) {
+                return res.data;
+            })
+            .catch(function (err) {
+                return err;
+            });
+    }
 }
 

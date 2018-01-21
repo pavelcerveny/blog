@@ -22,6 +22,9 @@ export class BlogPostComponent extends Vue {
     get postContent () {
         return this.$store.getters['blogPost/content'];
     }
+    get postTitleImg () {
+        return this.$store.getters['blogPost/titleImg'];
+    }
 }
 
 Vue.component('blogPost', BlogPostComponent);

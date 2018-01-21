@@ -30,5 +30,11 @@ export interface blogPostState {
     titleImg: String;
     author: String;
     status: String;
+    url: String;
+    error: any;
+}
+
+export interface postsState {
+    posts: blogPostState[]
     error: any;
 }

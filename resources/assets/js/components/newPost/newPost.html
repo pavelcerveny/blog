@@ -1,23 +1,24 @@
 <div>
-    <div class="alert alert-danger" role="alert">
-        Title is missing!
-    </div>
+    <!--<div class="alert alert-danger" role="alert">-->
+        <!--Title is missing!-->
+    <!--</div>-->
     <h1>Add new post</h1>
-    <div class="form-group">
-        <div class="container">
-            <div class="row">
-                <div class="image-box">
-                    <li v-for="image in images">
-                        <img :src="image.data" />
-                        <span>{{ image.title }}</span>
-                    </li>
-                </div>
-            </div>
-        </div>
-        <input type="file" @change="onFileChange" value="Upload image">
-    </div>
+    <!--<div class="form-group">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="image-box">-->
+                    <!--<li v-for="image in images">-->
+                        <!--<img :src="image.data" />-->
+                        <!--<span>{{ image.title }}</span>-->
+                    <!--</li>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<input type="file" @change="onFileChange" value="Upload image">-->
+    <!--</div>-->
     <div class="form-group">
         <h4 for="title">Add title</h4>
+        <br /><br />
         <input type="email" class="form-control" id="title" placeholder="title..." v-model="postTitle">
         <br /><br />
         <tiny-m-c-e id="descriptionLong"
