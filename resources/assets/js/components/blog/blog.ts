@@ -8,6 +8,7 @@ import { Component } from 'vue-property-decorator';
     components: { }
 })
 export class BlogComponent extends Vue {
+
     mounted () {
         if (this.$store.getters['posts/posts'].length === 0) {
             this.$store.dispatch('posts/getPosts');

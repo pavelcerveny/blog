@@ -1,4 +1,9 @@
 <div>
+    <transition name="fade">
+        <div v-if="isLoading" class="white-overlay spinner-center">
+            <clip-loader :loading="isLoading" color="#f22929"></clip-loader>
+        </div>
+    </transition>
     <headerNav></headerNav>
     <main class="index">
         <h1 class="main-header">Best blog about hot tech!</h1>

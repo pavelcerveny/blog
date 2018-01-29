@@ -38,3 +38,8 @@ export interface postsState {
     posts: blogPostState[]
     error: any;
 }
+
+export interface mainState {
+    loading: Boolean;
+    error: any;
+}

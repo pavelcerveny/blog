@@ -9,6 +9,13 @@ import { Component } from 'vue-property-decorator';
 })
 export class CategoriesComponent extends Vue {
 
+    beforeCreate() {
+        this.$store.dispatch('main/loading', true);
+    }
+
+    mounted() {
+        this.$store.dispatch('main/loading', false);
+    }
 }
 
 Vue.component('categories', CategoriesComponent);

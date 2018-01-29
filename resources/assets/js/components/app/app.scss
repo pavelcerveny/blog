@@ -1,0 +1,28 @@
+.loading {
+  background-color: #63ab97;
+  height: 100vh;
+  width: 100%;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.white-overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  margin: 0;
+}
+
+.spinner-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

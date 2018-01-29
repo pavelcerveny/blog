@@ -43,7 +43,9 @@ export const actions: ActionTree<postsState, any> = {
 
     async getPosts ({ commit }, payload) {
         try {
+
             const response = await API.getPosts(payload);
+            commit('main/setLoading', false, { root: true });
             if (response) {
                 commit('getPosts', response);
             } else {

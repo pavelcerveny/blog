@@ -4,6 +4,7 @@ import { newPost } from './newPost'
 import { blogPost } from './blogPost';
 import { auth } from './auth';
 import { posts } from './posts';
+import { main } from './main';
 
 Vue.use(Vuex);
 
@@ -14,7 +15,8 @@ export const store = new Vuex.Store({
         newPost,
         auth,
         blogPost,
-        posts
+        posts,
+        main
     },
     plugins: []
 });
